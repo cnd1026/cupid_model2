@@ -1,0 +1,98 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/head.jsp" %>
+
+<div style="width:800px; margin-left:auto; margin-right:auto; margin-top:20px; margin-bottom:100px; border:1px solid #CCC; color: #444;">
+	
+	<div style="width:100%; height:35px; padding-top:10px; padding-bottom:10px; display:flex; flex-wrap:wrap-reverse;">
+		<!-- 1 -->
+		<div style="width:29px; height:30px; background-color:#CCC; text-align:center; padding-left:1px; border-radius:50%; font-size:20px; font-weight:700; color:#FFF; margin-left:340px;">1</div>
+		<!--맴버십 선택-->
+		<div style="width:120px; height:28px; margin-left:20px; margin-right:20px; font-size:15px;">
+			맴버십 선택
+			<div style="width:15px; height:40px; float:right; background-image:url(/cupid/img/rightArrow.png); background-size:80%; background-repeat:no-repeat; margin-top:2px;"></div></div>
+		<!-- 2 -->
+		<div style="width:29px; height:30px; background-color:#CCC; text-align:center; border-radius:50%; font-size:20px; font-weight:700; color:#FFF;">2</div>
+		<!--개인 정보-->
+		<div style="width:100px; height:28px; margin-left:20px; margin-right:20px; font-size:15px;">
+			개인 정보
+			<div style="width:15px; height:35px; float:right; background-image:url(/cupid/img/rightArrow.png); background-size:80%; background-repeat:no-repeat; margin-top:2px;"></div></div>
+		<!-- 3 -->
+		<div style="width:29px; height:30px; background-color:#555; text-align:center; border-radius:50%; font-size:20px; font-weight:700; color:#FFF;">3</div>
+		<!--영수증-->
+		<div style="width:50px; height:28px; margin-left:20px; font-size:15px;">영수증</div>
+	</div>
+
+	<!-- 명령질 -->
+	<div style="width: 95%; height: 600px; padding-bottom:50px; margin-top:50px; margin-bottom: 20px; margin-left: auto; margin-right: auto; text-align: center; font-size: 20px; background-color:#EEE; border:1px solid #AAA;">
+		<div style="width: 100%; height: 60px; padding-top: 20px; font-size: 25px;">
+			영 수 증
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; margin-top: 20px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				입금방법 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				 ${ways }
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				입금금액 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				 ${getMoney } 원
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				할 부 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				${halbu }
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				이 름 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				(주)큐피드
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; margin-top: 20px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				입금자명 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				${name }
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; margin-top: 20px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				부여계급 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				${hogulevel }
+			</div>
+		</div>
+		<div style="width: 100%; height: 50px; padding-top: 15px; margin-top: 20px; font-size: 18px; display: flex; flex-wrap: nowrap;">
+			<div style="width: 15%; height: 50px; text-align: right;">
+				유지개월 :
+			</div>
+			<div style="width: 85%; height: 50px; text-align: left; padding-left: 10px;">
+				${gaewol } 개월
+			</div>
+		</div>
+	</div>
+	<form name="hoguwat" action="Index.do?nowserver=${nowserver }" method="post">
+	<input type="hidden" name="nowserver" value="${nowserver }">
+	<!-- 결제 -->
+	<label for="hogulast">
+		<div style="width:30%; height:40px; padding-top:10px; margin-top:20px; margin-left:auto; margin-right:auto; margin-bottom:20px; border-radius:10px; text-align:center; font-size:20px; color:#FFF; font-weight:500; background-color:#987654; cursor:pointer;">
+					<input type="submit" id="hogulast" value="확 인" style="border:0px solid black; font-size:20px; color:#FFF; font-weight:500; background-color:#987654; cursor:pointer;">
+		</div>
+	</label>
+	</form>
+</div>
+
+<%@ include file="/tail.jsp" %>
